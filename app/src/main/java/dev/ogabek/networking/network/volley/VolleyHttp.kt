@@ -13,9 +13,9 @@ class VolleyHttp {
 
         val TAG: String = VolleyHttp::class.java.simpleName
 
-        const val IS_TESTER = true
+        const val IS_TESTER = false
         const val SERVER_DEVELOPMENT = "https://jsonplaceholder.typicode.com/"
-        const val SERVER_PRODUCTION = "https://jsonplaceholder.typicode.com/"
+        const val SERVER_PRODUCTION = "https://62219f86afd560ea69b521f4.mockapi.io/"
 
         fun server(url: String): String {
             return if (IS_TESTER) {
@@ -47,6 +47,7 @@ class VolleyHttp {
                     volleyHandler.onError(error.toString())
                 }) {
                 override fun getParams(): MutableMap<String, String> {
+
                     return params
                 }
             }
